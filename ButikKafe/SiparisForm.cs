@@ -61,5 +61,39 @@ namespace ButikKafe
             Close();
             
         }
+
+        private void btnSiparisIptal_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show(
+                "Bu siparişi iptal etmek istediğinize emin misiniz?",
+                "Sipariş İptal Onayı",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2
+                );
+
+            if (dr == DialogResult.Yes)
+            {
+            db.MasayiKapat(siparis.MasaNo, SiparisDurum.Iptal);
+            Close();
+            }
+        }
+
+        private void btnOdemeAl_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show(
+               siparis.ToplamTutarTL + " tahsil edildiyse sipariş kapatılacaktır. Onaylıyor musunuz?",
+               "Ödeme Alındı Onayı",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question,
+               MessageBoxDefaultButton.Button2
+               );
+
+            if (dr == DialogResult.Yes)
+            {
+                db.MasayiKapat(siparis.MasaNo, SiparisDurum.Odendi);
+                Close();
+            }
+        }
     }
 }
