@@ -57,6 +57,7 @@ namespace ButikKafe
 
         private void btnAnaSayfa_Click(object sender, EventArgs e)
         {
+        //Bu pencereyi kapat
             Close();
             
         }
