@@ -174,6 +174,7 @@
             this.btnAnaSayfa.TabIndex = 11;
             this.btnAnaSayfa.Text = "ANASAYFAYA DÖN\r\n";
             this.btnAnaSayfa.UseVisualStyleBackColor = false;
+            this.btnAnaSayfa.Click += new System.EventHandler(this.btnAnaSayfa_Click);
             // 
             // SiparisForm
             // 
